@@ -1,0 +1,137 @@
+Starting Benchmarks - Sun Feb  8 15:28:28 UTC 2026
+==============================
+--- CPU Speed ---
+    events per second: 189880.97
+    events per second: 189576.13
+    events per second: 190005.15
+    events per second: 189886.26
+    events per second: 190098.99
+    events per second: 189925.62
+    events per second: 189961.54
+    events per second: 189870.61
+    events per second: 189516.50
+    events per second: 189795.37
+--- Memory Access (MB/s) ---
+AVG     Method: MEMCPY  Elapsed: 0.15950        MiB: 1024.00000 Copy: 6420.018 >
+AVG     Method: DUMB    Elapsed: 0.08299        MiB: 1024.00000 Copy: 12339.089>
+AVG     Method: MCBLOCK Elapsed: 0.10611        MiB: 1024.00000 Copy: 9650.254 >
+AVG     Method: MEMCPY  Elapsed: 0.16391        MiB: 1024.00000 Copy: 6247.483 >
+AVG     Method: DUMB    Elapsed: 0.08947        MiB: 1024.00000 Copy: 11445.152>
+AVG     Method: MCBLOCK Elapsed: 0.10631        MiB: 1024.00000 Copy: 9632.634 >
+AVG     Method: MEMCPY  Elapsed: 0.16253        MiB: 1024.00000 Copy: 6300.472 >
+AVG     Method: DUMB    Elapsed: 0.08627        MiB: 1024.00000 Copy: 11869.821>
+AVG     Method: MCBLOCK Elapsed: 0.10811        MiB: 1024.00000 Copy: 9472.036 >
+AVG     Method: MEMCPY  Elapsed: 0.15996        MiB: 1024.00000 Copy: 6401.608 >
+AVG     Method: DUMB    Elapsed: 0.08391        MiB: 1024.00000 Copy: 12203.697>
+AVG     Method: MCBLOCK Elapsed: 0.10624        MiB: 1024.00000 Copy: 9638.835 >
+AVG     Method: MEMCPY  Elapsed: 0.16949        MiB: 1024.00000 Copy: 6041.619 >
+AVG     Method: DUMB    Elapsed: 0.08409        MiB: 1024.00000 Copy: 12176.806>
+AVG     Method: MCBLOCK Elapsed: 0.10625        MiB: 1024.00000 Copy: 9637.656 >
+AVG     Method: MEMCPY  Elapsed: 0.15993        MiB: 1024.00000 Copy: 6402.905 >
+AVG     Method: DUMB    Elapsed: 0.08244        MiB: 1024.00000 Copy: 12421.667>
+AVG     Method: MCBLOCK Elapsed: 0.10650        MiB: 1024.00000 Copy: 9615.358 >
+AVG     Method: MEMCPY  Elapsed: 0.16012        MiB: 1024.00000 Copy: 6395.343 >
+AVG     Method: DUMB    Elapsed: 0.08401        MiB: 1024.00000 Copy: 12189.576>
+AVG     Method: MCBLOCK Elapsed: 0.10637        MiB: 1024.00000 Copy: 9626.720 >
+AVG     Method: MEMCPY  Elapsed: 0.16100        MiB: 1024.00000 Copy: 6360.086 >
+AVG     Method: DUMB    Elapsed: 0.08443        MiB: 1024.00000 Copy: 12128.060>
+AVG     Method: MCBLOCK Elapsed: 0.10744        MiB: 1024.00000 Copy: 9530.537 >
+AVG     Method: MEMCPY  Elapsed: 0.16211        MiB: 1024.00000 Copy: 6316.605 >
+AVG     Method: DUMB    Elapsed: 0.08432        MiB: 1024.00000 Copy: 12144.011>
+AVG     Method: MCBLOCK Elapsed: 0.10768        MiB: 1024.00000 Copy: 9509.632 >
+AVG     Method: MEMCPY  Elapsed: 0.16346        MiB: 1024.00000 Copy: 6264.537 >
+AVG     Method: DUMB    Elapsed: 0.07723        MiB: 1024.00000 Copy: 13259.903>
+AVG     Method: MCBLOCK Elapsed: 0.10517        MiB: 1024.00000 Copy: 9737.052 >
+--- Disk Read Speed ---
+Read BW:  KB/s
+Read BW: 267357 KB/s
+Read BW:  KB/s
+Read BW: 273422 KB/s
+Read BW:  KB/s
+Read BW: 272640 KB/s
+Read BW:  KB/s
+Read BW: 274568 KB/s
+Read BW:  KB/s
+Read BW: 273208 KB/s
+Read BW:  KB/s
+Read BW: 272640 KB/s
+Read BW:  KB/s
+Read BW: 273208 KB/s
+Read BW:  KB/s
+Read BW: 271370 KB/s
+Read BW:  KB/s
+Read BW: 269626 KB/s
+Read BW:  KB/s
+Read BW: 266474 KB/s
+--- Network Speed ---
+[  5]   0.00-5.00   sec  29.3 GBytes  50.3 Gbits/sec    0             sender
+[  5]   0.00-5.00   sec  29.5 GBytes  50.6 Gbits/sec    0             sender
+[  5]   0.00-5.00   sec  29.4 GBytes  50.5 Gbits/sec    0             sender
+[  5]   0.00-5.00   sec  29.7 GBytes  51.0 Gbits/sec    0             sender
+[  5]   0.00-5.00   sec  29.5 GBytes  50.7 Gbits/sec    0             sender
+--- Process Speed (Forksum) ---
+
+real    0m0.129s
+user    0m0.237s
+sys     0m0.151s
+
+real    0m0.119s
+user    0m0.222s
+sys     0m0.147s
+
+real    0m0.129s
+user    0m0.221s
+sys     0m0.186s
+
+real    0m0.104s
+user    0m0.217s
+sys     0m0.130s
+
+real    0m0.119s
+user    0m0.223s
+sys     0m0.152s
+
+real    0m0.127s
+user    0m0.228s
+sys     0m0.171s
+
+real    0m0.124s
+user    0m0.236s
+sys     0m0.169s
+
+real    0m0.124s
+user    0m0.226s
+sys     0m0.151s
+
+real    0m0.111s
+user    0m0.223s
+sys     0m0.146s
+
+real    0m0.112s
+user    0m0.215s
+sys     0m0.137s
+--- Parallel Scaling ---
+Threads: 1
+    events per second: 189186.45
+    events per second: 189918.21
+    events per second: 190034.90
+    events per second: 189934.68
+    events per second: 190225.93
+Threads: 2
+    events per second: 374548.88
+    events per second: 375756.46
+    events per second: 374122.57
+    events per second: 376490.65
+    events per second: 376261.13
+Threads: 3
+    events per second: 383624.31
+    events per second: 383887.52
+    events per second: 383012.69
+    events per second: 383296.21
+    events per second: 383278.76
+Threads: 4
+    events per second: 388606.27
+    events per second: 388568.63
+    events per second: 388556.30
+    events per second: 388497.39
+    events per second: 388337.33
