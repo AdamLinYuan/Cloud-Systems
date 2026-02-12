@@ -15,7 +15,7 @@ else
 fi
  
 # Create output file
-OUTPUT_FILE="results_native.txt"
+OUTPUT_FILE="8gb_4core.txt"
 echo "Starting Benchmarks - $(date)" > $OUTPUT_FILE
 echo "==============================" >> $OUTPUT_FILE
  

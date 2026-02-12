@@ -26,25 +26,27 @@ def parse_parallel_scaling(content):
     return thread_data
 
 # Load all result files
-results_dir = Path('/Users/adamyuan/Documents/UofG/Yr 4/Courses/Cloud Systems/results')
+base_dir = Path('/Users/adamyuan/Documents/UofG/Yr 4/Courses/Cloud Systems')
+txt_dir = base_dir / 'txt'
 files = {
-    'Native': 'results_native.txt',
-    'Docker': 'docker.txt',
-    'QEMU+HW': 'QEMU With Hardware enabled.txt',
-    'QEMU-HW': 'QEMU Without Hardware enabled.txt'
+    '16GB 4-Core': (txt_dir, '16gb_4core.txt'),
+    '8GB 4-Core': (txt_dir, '8gb_4core.txt'),
+    'Docker': (txt_dir, 'docker.txt'),
+    'QEMU+HW': (txt_dir, 'QEMU With Hardware enabled.txt'),
+    'QEMU-HW': (txt_dir, 'QEMU Without Hardware enabled.txt')
 }
 
 parallel_data = {}
-for name, filename in files.items():
-    with open(results_dir / filename, 'r') as f:
+for name, (file_dir, filename) in files.items():
+    with open(file_dir / filename, 'r') as f:
         content = f.read()
         parallel_data[name] = parse_parallel_scaling(content)
 
-# Create individual graphs for each deployment
-fig, axes = plt.subplots(2, 2, figsize=(16, 12))
+# Create individual graphs for each configuration
+fig, axes = plt.subplots(2, 3, figsize=(18, 12))
 axes = axes.flatten()
 
-colors = ['#2E86AB', '#A23B72', '#F18F01', '#C73E1D']
+colors = ['#2E86AB', '#A23B72', '#F18F01', '#C73E1D', '#6A994E']
 deployment_names = list(files.keys())
 
 for idx, (deployment, ax) in enumerate(zip(deployment_names, axes)):
@@ -102,9 +104,12 @@ for idx, (deployment, ax) in enumerate(zip(deployment_names, axes)):
                 transform=ax.transAxes, fontsize=8, verticalalignment='top',
                 bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
 
+# Hide the last (6th) subplot since we only have 5 configurations
+axes[5].axis('off')
+
 plt.tight_layout()
-plt.savefig(results_dir / 'parallel_performance_individual.png', dpi=300, bbox_inches='tight')
-print(f"✓ Individual parallel performance graphs saved to: {results_dir / 'parallel_performance_individual.png'}")
+plt.savefig(base_dir / 'parallel_performance_individual.png', dpi=300, bbox_inches='tight')
+print(f"✓ Individual parallel performance graphs saved to: {base_dir / 'parallel_performance_individual.png'}")
 
 # Create a combined comparison graph
 fig2, ax = plt.subplots(figsize=(14, 8))
@@ -124,15 +129,15 @@ for idx, deployment in enumerate(deployment_names):
 
 ax.set_xlabel('Thread Count', fontsize=13, fontweight='bold')
 ax.set_ylabel('Events per Second', fontsize=13, fontweight='bold')
-ax.set_title('Parallel Scaling Comparison - All Deployments', fontsize=15, fontweight='bold')
+ax.set_title('Parallel Scaling Comparison - All Configurations', fontsize=15, fontweight='bold')
 ax.legend(fontsize=11, loc='best')
 ax.grid(True, alpha=0.3)
 if parallel_data[deployment_names[0]]:
     ax.set_xticks(sorted(parallel_data[deployment_names[0]].keys()))
 
 plt.tight_layout()
-plt.savefig(results_dir / 'parallel_performance_combined.png', dpi=300, bbox_inches='tight')
-print(f"✓ Combined parallel performance graph saved to: {results_dir / 'parallel_performance_combined.png'}")
+plt.savefig(base_dir / 'parallel_performance_combined.png', dpi=300, bbox_inches='tight')
+print(f"✓ Combined parallel performance graph saved to: {base_dir / 'parallel_performance_combined.png'}")
 
 # Print summary statistics
 print("\n" + "="*80)
